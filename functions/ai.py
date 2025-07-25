@@ -19,9 +19,12 @@ def handler(event, context):
 
         prompt = f"User asked: {query}\nHere are relevant facts:\n{snippets}\nNow explain clearly:"
 
-        genai.configure(api_key="YOUR_GEMINI_API_KEY")
-        model = genai.GenerativeModel("gemini-pro")
-        response = model.generate_content(prompt)
+        #genai.configure(api_key="YOUR_GEMINI_API_KEY")
+        #model = genai.GenerativeModel("gemini-pro")
+        #response = model.generate_content(prompt)
+
+        response_text = f"You asked: {query}. DuckDuckGo said:\n{snippets}"
+
 
         return {
             'statusCode': 200,
